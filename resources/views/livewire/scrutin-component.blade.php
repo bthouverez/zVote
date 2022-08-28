@@ -1,0 +1,57 @@
+<div>
+    <h1>{{ $scrutin->libelle }}</h1>
+    @if($votant_scrutin_actuel)
+        <p>Votant actuellement sélectionné
+            <strong class="font-bold">{{ Str::upper($votant_scrutin_actuel->votant->nom) }} {{ $votant_scrutin_actuel->votant->prenom }}</strong>
+        </p>
+        <button wire:click="resetVotant" class="border border-solid border-2 border-red-600 hover:bg-red-400 rounded p-2" >Ce n'est pas moi !</button>
+    @else
+        <p>Sélectionnez-vous dans la liste ci-dessous</p>
+        <select  wire:model="votant_scrutin_actuel">
+            <option>Liste des votants...</option>
+            @foreach($scrutin->votants as $votant)
+                <option value="{{ $votant->id }}">
+                    {{ Str::upper($votant->nom) }} {{ $votant->prenom }}
+                </option>
+            @endforeach
+        </select>
+    @endif
+
+
+    @if($votant_scrutin_actuel and $votant_scrutin_actuel->a_vote)
+        <p>Un vote a déjà été enregistré pour
+            <strong class="font-bold">
+                {{ Str::upper($votant_scrutin_actuel->votant->nom) }} {{ $votant_scrutin_actuel->votant->prenom }}
+            </strong>
+        </p>
+    @else
+        <h2>Candidats</h2>
+        <ul class="flex">
+            @foreach($scrutin->candidats as $candidat)
+                <li>
+                    <button wire:click="selectCandidat({{ $candidat->id }})"
+                    class="border border-solid border-4 border-gray-800 rounded p-5 m-2
+                    @if(!$votant_scrutin_actuel)
+                        bg-gray-600 hover:cursor-not-allowed
+                    @elseif($candidat_selectionne_id == $candidat->id)
+                        bg-green-600
+                    @else
+                        bg-gray-300 hover:bg-green-300
+                    @endif
+                    ">
+
+                        {{ Str::upper($candidat->nom) }} {{ $candidat->prenom }}
+
+                    </button>
+
+                </li>
+            @endforeach
+        </ul>
+
+        @if($candidat_selectionne_id)
+            <button wire:click="vote"
+                class="border border-solid border-4 border-gray-600 rounded p-5 m-2">Enregistrer mon vote
+            </button>
+        @endif
+    @endif
+</div>
