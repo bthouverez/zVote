@@ -90,7 +90,7 @@ class ScrutinController extends Controller
     public function resultats(Scrutin $scrutin)
     {
         $candidats = $scrutin->candidats_scrutin->sortByDesc('nb_votes');
-        return view('scrutins.resultats', compact('candidats'));
+        return view('scrutins.resultats', compact('candidats'), compact('scrutin'));
     }
 
     public function controle(Scrutin $scrutin)

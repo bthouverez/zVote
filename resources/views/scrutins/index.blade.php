@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1>Tous les tournois</h1>
+    <h1 class="text-5xl font-bold py-4">@yield('title')</h1>
     <table class="border border-gray-500 border-solid">
         <tr>
             <th class="border border-gray-500 border-solid p-4">Date</th>

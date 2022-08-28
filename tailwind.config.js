@@ -5,7 +5,8 @@ module.exports = {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*show.blade.php',
         './vendor/laravel/jetstream/**/*show.blade.php',
         './storage/framework/views/*.php',
-        './resources/views/**/*show.blade.php',
+        './resources/views/**/*.blade.php',
+        "./resources/views/*.{html,js,php}"
     ],
 
     theme: {

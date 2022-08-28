@@ -18,7 +18,10 @@ use \App\Http\Livewire\ScrutinComponent;
 //    return view('welcome');
 //});
 
-Route::get('/', [ScrutinController::class, 'index']);
+Route::get('/', function (){
+    return redirect('/scrutins');
+});
+Route::get('/scrutins', [ScrutinController::class, 'index']);
 Route::get('/scrutins/{scrutin}', ScrutinComponent::class);
 Route::get('/scrutins/{scrutin}/resultats', [ScrutinController::class, 'resultats']);
 Route::get('/scrutins/{scrutin}/controle', [ScrutinController::class, 'controle']);

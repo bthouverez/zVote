@@ -1,13 +1,17 @@
-<div>
-    <h1>{{ $scrutin->libelle }}</h1>
+<div class="text-center">
+    <h1 class="text-5xl font-bold py-4">{{ $scrutin->libelle }}</h1>
     @if($votant_scrutin_actuel)
         <p>Votant actuellement sélectionné
             <strong class="font-bold">{{ Str::upper($votant_scrutin_actuel->votant->nom) }} {{ $votant_scrutin_actuel->votant->prenom }}</strong>
         </p>
-        <button wire:click="resetVotant" class="border border-solid border-2 border-red-600 hover:bg-red-400 rounded p-2" >Ce n'est pas moi !</button>
+        <button wire:click="resetVotant"
+                class="border border-solid border-4 border-red-600 hover:bg-red-400 rounded p-2" >
+            Ce n'est pas moi !
+        </button>
     @else
         <p>Sélectionnez-vous dans la liste ci-dessous</p>
-        <select  wire:model="votant_scrutin_actuel">
+        <select  wire:model="votant_scrutin_actuel"
+                 class="border border-solid border-gray-600 rounded text-lg">
             <option>Liste des votants...</option>
             @foreach($scrutin->votants as $votant)
                 <option value="{{ $votant->id }}">
@@ -17,6 +21,7 @@
         </select>
     @endif
 
+    <hr class="my-4">
 
     @if($votant_scrutin_actuel and $votant_scrutin_actuel->a_vote)
         <p>Un vote a déjà été enregistré pour
@@ -25,8 +30,8 @@
             </strong>
         </p>
     @else
-        <h2>Candidats</h2>
-        <ul class="flex">
+        <h2 style="font-size: 1.5rem">Les candidats</h2>
+        <ul class="flex justify-centerw">
             @foreach($scrutin->candidats as $candidat)
                 <li>
                     <button wire:click="selectCandidat({{ $candidat->id }})"
