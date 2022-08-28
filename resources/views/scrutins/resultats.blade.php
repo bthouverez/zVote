@@ -11,6 +11,7 @@
         <table class="m-auto">
             @foreach($candidats as $candidat)
             <tr>
+                <td class="p-3">{{ number_format($candidat->nb_votes/$candidats->map->nb_votes->sum() * 100, 2) }} %</td>
                 <td class="p-3">{{ Str::upper($candidat->votant->nom) }} {{ $candidat->votant->prenom }}</td>
                 <td class="p-3">{{ $candidat->nb_votes }} vote(s)</td>
             </tr>

@@ -31,7 +31,7 @@
         <tr>
             <td class="border border-gray-500 border-solid p-4" colspan="3">Créer un scrutin</td>
             <td class="border border-gray-500 border-solid p-4">
-                <a href="/scrutins/create">
+                <a href="/scrutins/creation">
                     <button
                         class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
                         +

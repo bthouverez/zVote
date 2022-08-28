@@ -31,7 +31,7 @@
         </p>
     @else
         <h2 style="font-size: 1.5rem">Les candidats</h2>
-        <ul class="flex justify-centerw">
+        <ul class="flex justify-center">
             @foreach($scrutin->candidats as $candidat)
                 <li>
                     <button wire:click="selectCandidat({{ $candidat->id }})"

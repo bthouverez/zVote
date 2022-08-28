@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Scrutin;
+use App\Models\Votant;
+use App\Models\VotantScrutin;
 use Illuminate\Http\Request;
 
 class ScrutinController extends Controller
@@ -20,11 +22,11 @@ class ScrutinController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $votants = Votant::all();
+        return view('scrutins.create', compact('votants'));
     }
 
     /**
@@ -39,6 +41,17 @@ class ScrutinController extends Controller
         $s->libelle = $request->libelle;
         $s->date = $request->date;
         $s->save();
+
+        foreach(Votant::all() as $votant) {
+            $vs = new VotantScrutin();
+            $vs->scrutin_id = $s->id;
+            $vs->votant_id = $votant->id;
+            if(in_array($votant->id, $request->candidats)) {
+                $vs->candidat = true;
+                $vs->nb_votes = 0;
+            }
+            $vs->save();
+        }
         return redirect('/scrutins/'.$s->id);
     }
 

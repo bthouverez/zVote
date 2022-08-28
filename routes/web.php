@@ -22,6 +22,10 @@ Route::get('/', function (){
     return redirect('/scrutins');
 });
 Route::get('/scrutins', [ScrutinController::class, 'index']);
-Route::get('/scrutins/{scrutin}', ScrutinComponent::class);
+Route::post('/scrutins', [ScrutinController::class, 'store']);
+Route::get('/scrutins/creation', [ScrutinController::class, 'create']);
 Route::get('/scrutins/{scrutin}/resultats', [ScrutinController::class, 'resultats']);
 Route::get('/scrutins/{scrutin}/controle', [ScrutinController::class, 'controle']);
+
+Route::get('/scrutins/{scrutin}', ScrutinComponent::class);
+
