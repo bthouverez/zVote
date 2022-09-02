@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('scrutins', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
-            $table->string('lieu');
             $table->date('date');
+            $table->boolean('bloque')->default(false);
             $table->timestamps();
         });
     }

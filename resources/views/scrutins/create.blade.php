@@ -9,11 +9,9 @@
     <form action="/scrutins" method="post">
         @csrf
         <input class="border border-solid border-gray-800 rounded p-3 m-3"
+               value="{{ date('Y-m-d') }}" type="date" name="date"><br>
+        <input class="border border-solid border-gray-800 rounded p-3 m-3"
                placeholder="Libellé" type="text" name="libelle"><br>
-        <input class="border border-solid border-gray-800 rounded p-3 m-3"
-               placeholder="Date" type="date" name="date"><br>
-        <input class="border border-solid border-gray-800 rounded p-3 m-3"
-               placeholder="Lieu" type="text" name="lieu"><br>
         <select class="border border-solid border-gray-800 rounded p-3 m-3 h-60"
                 name="candidats[]" multiple>
             @foreach($votants as $votant)

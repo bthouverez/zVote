@@ -13,19 +13,28 @@ class ScrutinComponent extends Component
     public $scrutin;
     public $votant_scrutin_actuel;
     public $candidat_selectionne_id;
+    public $motdepasse;
 
     public function mount(Scrutin $scrutin)
     {
         $this->scrutin = $scrutin;
         $this->votant_scrutin_actuel = null;
         $this->candidat_selectionne_id = null;
+        $this->motdepasse = '';
+        if($this->scrutin->bloque) {
+            $this->votant_scrutin_actuel = $scrutin->votants_scrutin
+                ->where('a_vote', true)
+                ->sortByDesc('updated_at')
+                ->first();
+        }
     }
 
     public function updated($name, $value)
     {
         if($name == 'votant_scrutin_actuel')
-            $this->votant_scrutin_actuel = VotantScrutin::where('votant_id', $value)
-                ->where('scrutin_id', $this->scrutin->id)->first();
+            $this->votant_scrutin_actuel = $this->scrutin->votants_scrutin
+                ->where('votant_id', $value)
+                ->first();
     }
 
     public function resetVotant()
@@ -49,7 +58,20 @@ class ScrutinComponent extends Component
             ->where('scrutin_id', $this->scrutin->id)->first();
         $vs->nb_votes++;
         $vs->save();
-        return redirect('/scrutins/'.$this->scrutin->id);
+
+        $this->scrutin->bloque = true;
+        $this->scrutin->save();
+//        return redirect('/scrutins/'.$this->scrutin->id);
+    }
+
+    public function unlock()
+    {
+        if($this->motdepasse == env('DB_PASSWORD')) {
+            $this->scrutin->bloque = false;
+            $this->scrutin->save();
+            $this->resetVotant();
+        }
+        $this->motdepasse = '';
     }
 
     public function render()

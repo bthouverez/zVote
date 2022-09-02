@@ -37,7 +37,6 @@ class ScrutinController extends Controller
     public function store(Request $request)
     {
         $s = new Scrutin();
-        $s->lieu = $request->lieu;
         $s->libelle = $request->libelle;
         $s->date = $request->date;
         $s->save();

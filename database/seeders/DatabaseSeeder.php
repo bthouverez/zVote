@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 //        $s = new Scrutin();
-//        $s->lieu = 'Salle des familles';
 //        $s->libelle = 'Election du président';
 //        $s->date = '2022-09-02';
 //        $s->save();
@@ -133,7 +132,7 @@ class DatabaseSeeder extends Seeder
         //$vs->save();
 
         $v = new Votant();
-        $v->nom = 'BRESNIER';
+        $v->nom = 'BESNIER';
         $v->prenom = 'Jean-Jacques';
         $v->save();
 
@@ -247,16 +246,6 @@ class DatabaseSeeder extends Seeder
         $v = new Votant();
         $v->nom = 'DI LITTA';
         $v->prenom = 'Fabrice';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'Nom';
-        $v->prenom = 'Prénom';
         $v->save();
 
         //$vs = new VotantScrutin();
