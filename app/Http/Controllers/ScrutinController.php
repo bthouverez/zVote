@@ -6,6 +6,7 @@ use App\Models\Scrutin;
 use App\Models\Votant;
 use App\Models\VotantScrutin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ScrutinController extends Controller
 {
@@ -111,5 +112,26 @@ class ScrutinController extends Controller
             ->where('a_vote', true)->where('candidat', false)->sortByDesc('updated_at');
         $votes_candidat = $scrutin->votants_scrutin->where('scrutin_id', $scrutin->id)->where('candidat', true);
         return view('scrutins.controle', compact('votes_non_candidat'), compact('votes_candidat'));
+    }
+
+
+    public function userSelect()
+    {
+        $votants = Votant::all();
+        return view('select-user', compact('votants'));
+    }
+
+    public function userConnect($id)
+    {
+        // connecte l'utilisateur
+        $v = Votant::find($id);
+        session()->put('user_id', $id);
+        session()->put('user_name', $v->prenom);
+        return redirect('/scrutins');
+    }
+
+    public function createVote(Scrutin $scrutin)
+    {
+        return view('scrutins.vote', compact('scrutin'));
     }
 }

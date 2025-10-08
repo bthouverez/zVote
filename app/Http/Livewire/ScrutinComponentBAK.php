@@ -7,16 +7,34 @@ use App\Models\Votant;
 use App\Models\VotantScrutin;
 use Livewire\Component;
 
-class ScrutinComponent extends Component
+class ScrutinComponentBAK extends Component
 {
     protected $listeners = ['refresh' => '$refresh'];
     public $scrutin;
-    public $vote;
+    public $votant_scrutin_actuel;
+    public $candidat_selectionne_id;
+    public $motdepasse;
 
     public function mount(Scrutin $scrutin)
     {
         $this->scrutin = $scrutin;
-        $this->vote = "";
+        $this->votant_scrutin_actuel = null;
+        $this->candidat_selectionne_id = null;
+        $this->motdepasse = '';
+        if($this->scrutin->bloque) {
+            $this->votant_scrutin_actuel = $scrutin->votants_scrutin
+                ->where('a_vote', true)
+                ->sortByDesc('updated_at')
+                ->first();
+        }
+    }
+
+    public function updated($name, $value)
+    {
+        if($name == 'votant_scrutin_actuel')
+            $this->votant_scrutin_actuel = $this->scrutin->votants_scrutin
+                ->where('votant_id', $value)
+                ->first();
     }
 
     public function resetVotant()
@@ -25,9 +43,10 @@ class ScrutinComponent extends Component
         $this->candidat_selectionne_id = null;
     }
 
-    public function selectVote($vote)
+    public function selectCandidat($candidat_id)
     {
-        $this->vote = $vote;
+        if(!$this->votant_scrutin_actuel) return;
+        $this->candidat_selectionne_id = $candidat_id;
     }
 
     public function vote()

@@ -13,6 +13,7 @@
     {{--    <link rel="stylesheet" href="{{ mix('css/app.css') }}">--}}
     @livewireStyles
     <link rel="stylesheet" href="/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 
     <style>
