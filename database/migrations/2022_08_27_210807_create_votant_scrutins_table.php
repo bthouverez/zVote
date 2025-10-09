@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('votant_id');
             $table->integer('scrutin_id');
-            $table->boolean('a_vote')->default(false);
-            $table->boolean('candidat')->default(false);
-            $table->integer('nb_votes')->nullable()->default(null);
+            $table->boolean('vote')->nullable();
             $table->timestamps();
         });
     }
