@@ -7,9 +7,14 @@
         @if(session('info'))
             <p>{{ session('info') }}</p>
         @endif
-        <h2 class="text-5xl font-bold py-4">Bonjour {{ session('user_name') }}</h2>
-        <p>Les différentes résolutions à voter apparaîtront ici</p>
-        <table class="border border-gray-500 border-solid">
+        <h2 class="text-2xl text-center font-bold py-4">Bonjour {{ session('user_name') }}</h2>
+        <p class="text-center">Les différentes résolutions à voter apparaîtront ici</p>
+        <p>
+            <a href="/scrutins"><button class="my-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Recharger la page
+                </button></a>
+        </p>
+        <table class="border border-gray-500 border-solid w-full">
             <tr>
                 {{--            <th class="border border-gray-500 border-solid p-4">Date</th>--}}
                 <th class="border border-gray-500 border-solid p-4">Nom</th>
@@ -55,7 +60,7 @@
         @if(Auth::user())
             <a href="/scrutins/create">
                 <button
-                    class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
+                    class="bg-transparent my-4 hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
                     Ajouter un scrutin
                 </button>
             </a>
@@ -64,7 +69,7 @@
                 <input class="border py-2 my-2" name="newPrenom" placeholder="Prenom"><br>
                 <input class="border py-2 my-2" name="newNom" placeholder="Nom"><br>
                 <button
-                    class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
+                    class="bg-transparent my-4 hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
                     Ajouter votant
                 </button>
             </form>

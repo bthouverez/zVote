@@ -20,6 +20,9 @@ use \App\Http\Livewire\ConnectUser;
 |
 */
 
+Route::get('/', function() {
+    return redirect('/user-select');
+});
 
 Route::get('login', function() {
     Auth::login(User::find(1));
@@ -34,7 +37,6 @@ Route::get('/logout', function() {
 });
 
 
-Route::get('/scrutins', [ScrutinController::class, 'index'])->name('login');
 
 
 Route::middleware(['cannot-reconnect'])->group(function () {
@@ -60,4 +62,5 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['connected'])->group(function () {
     Route::get('/scrutins/{scrutin}', ScrutinComponent::class);
+    Route::get('/scrutins', [ScrutinController::class, 'index'])->name('login');
 });
