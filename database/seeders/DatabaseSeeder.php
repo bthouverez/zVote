@@ -19,10 +19,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+         \App\Models\User::factory()->create([
+             'name' => 'Bat',
+             'email' => 'bthouverez@bthouverez.fr',
+             'password'=> '$2y$10$uj2W4oYIVfJ83SfP6O3uvOho4FJnyR2/g4YBN1r54LNGNroaTcIAW'
+         ]);
 
 //        $s = new Scrutin();
 //        $s->libelle = 'Election du président';

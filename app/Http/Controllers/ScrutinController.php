@@ -42,17 +42,9 @@ class ScrutinController extends Controller
         $s->date = $request->date;
         $s->save();
 
-        foreach(Votant::all() as $votant) {
-            $vs = new VotantScrutin();
-            $vs->scrutin_id = $s->id;
-            $vs->votant_id = $votant->id;
-            if(in_array($votant->id, $request->candidats)) {
-                $vs->candidat = true;
-                $vs->nb_votes = 0;
-            }
-            $vs->save();
-        }
-        return redirect('/scrutins/'.$s->id);
+
+        return redirect('/scrutins/');
+//        return redirect('/scrutins/'.$s->id);
     }
 
     /**
@@ -102,8 +94,7 @@ class ScrutinController extends Controller
 
     public function resultats(Scrutin $scrutin)
     {
-        $candidats = $scrutin->candidats_scrutin->sortByDesc('nb_votes');
-        return view('scrutins.resultats', compact('candidats'), compact('scrutin'));
+        return view('scrutins.resultats',  compact('scrutin'));
     }
 
     public function controle(Scrutin $scrutin)

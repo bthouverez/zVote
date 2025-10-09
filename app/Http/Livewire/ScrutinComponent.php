@@ -32,17 +32,15 @@ class ScrutinComponent extends Component
 
     public function vote()
     {
-        $this->votant_scrutin_actuel->a_vote = true;
-        $this->votant_scrutin_actuel->save();
-
-        $vs = VotantScrutin::where('votant_id', $this->candidat_selectionne_id)
-            ->where('scrutin_id', $this->scrutin->id)->first();
-        $vs->nb_votes++;
+        $vs = new VotantScrutin;
+        $vs->votant_id = session('user_id');
+        $vs->scrutin_id = $this->scrutin->id;
+        $vs->vote = $this->vote == 'oui';
         $vs->save();
 
         $this->scrutin->bloque = true;
         $this->scrutin->save();
-//        return redirect('/scrutins/'.$this->scrutin->id);
+        return redirect('/scrutins/');
     }
 
     public function unlock()
