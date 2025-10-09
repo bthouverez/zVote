@@ -17,7 +17,7 @@
         <table class="border border-gray-500 border-solid w-full">
             <tr>
                 {{--            <th class="border border-gray-500 border-solid p-4">Date</th>--}}
-                <th class="border border-gray-500 border-solid p-4">Nom</th>
+                <th class="border border-gray-500 border-solid p-4">Résolution</th>
                 {{--            <th class="border border-gray-500 border-solid p-4">Lieu</th>--}}
                 <th class="border border-gray-500 border-solid p-4">Infos</th>
 
@@ -25,7 +25,7 @@
                     <th class="border border-gray-500 border-solid p-4">Résultats</th>
                 @endif
             </tr>
-            @foreach($scrutins as $s)
+            @forelse($scrutins as $s)
                 <tr>
                     {{--                <td class="border border-gray-500 border-solid p-4">{{ $s->date }}</td>--}}
                     <td class="border border-gray-500 border-solid p-4">{{ $s->libelle }}</td>
@@ -54,7 +54,13 @@
                         </td>
                     @endif
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="4" class="border border-gray-500 border-solid p-4 text-center">Aucun scrutin
+                        disponible actuellement
+                    </td>
+                </tr>
+            @endforelse
 
         </table>
         @if(Auth::user())
