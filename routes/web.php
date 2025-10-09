@@ -1,11 +1,13 @@
 <?php
 
 use App\Models\User;
+use App\Models\Votant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use \App\Http\Controllers\ScrutinController;
 use \App\Http\Livewire\ScrutinComponent;
+use \App\Http\Livewire\ConnectUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,20 +19,13 @@ use \App\Http\Livewire\ScrutinComponent;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 
-if(env('APP_ENV') === 'local' ) {
+Route::get('login', function() {
     Auth::login(User::find(1));
-//    Auth::logout();
-}
-
-
+    return redirect('user-select');
+});
 Route::post('userConnect/{id}', [ScrutinController::class, 'userConnect']);
-
 Route::get('/logout', function() {
     Auth::logout();
     session()->forget('user_id');
@@ -38,37 +33,31 @@ Route::get('/logout', function() {
     return redirect('/user-select');
 });
 
-Route::get('/', function() {
-    if(session('user_id') != '') {
+
+Route::get('/scrutins', [ScrutinController::class, 'index'])->name('login');
+
+
+Route::middleware(['cannot-reconnect'])->group(function () {
+    Route::get('/user-select', ConnectUser::class);
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/scrutins/create', [ScrutinController::class, 'create']);
+    Route::get('/scrutins/{scrutin}/resultats', [ScrutinController::class, 'resultats']);
+    Route::get('/scrutins/{scrutin}/controle', [ScrutinController::class, 'controle']);
+    Route::post('/scrutins', [ScrutinController::class, 'store']);
+    Route::post('/addVotant', function() {
+        $v = new Votant;
+        $v->nom = request('newNom');
+        $v->prenom = request('newPrenom');
+        $v->save();
+        session()->flash('info', $v->nom.' '.$v->prenom.' ajouté');
         return redirect('/scrutins');
-    } else {
-        return redirect('/user-select');
-    }
+    });
 });
 
-if (!session('user_id')) {
-    Route::get('/user-select', [ScrutinController::class, 'userSelect']);
-}
 
-if(session('user_id') == "") {
-    dd(session('user_id'));
-//    Route::get('/scrutins', func);
-} else {
-    Route::get('/scrutins', [ScrutinController::class, 'index']);
-
-}
-
-
-Route::post('/scrutins', [ScrutinController::class, 'store']);
-Route::get('/scrutins/creation', [ScrutinController::class, 'create']);
-Route::get('/scrutins/{scrutin}/resultats', [ScrutinController::class, 'resultats']);
-Route::get('/scrutins/{scrutin}/controle', [ScrutinController::class, 'controle']);
-
-
-Route::get('/test', function() {
-   dd(session('user_id')) ;
+Route::middleware(['connected'])->group(function () {
+    Route::get('/scrutins/{scrutin}', ScrutinComponent::class);
 });
-
-Route::get('/scrutins/{scrutin}', ScrutinComponent::class);
-//Route::get('/scrutins/{scrutin}', [ScrutinController::class, 'createVote']);
-

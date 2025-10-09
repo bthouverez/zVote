@@ -26,8 +26,7 @@ class ScrutinController extends Controller
      */
     public function create()
     {
-        $votants = Votant::all();
-        return view('scrutins.create', compact('votants'));
+        return view('scrutins.create');
     }
 
     /**
@@ -112,14 +111,7 @@ class ScrutinController extends Controller
         return view('select-user', compact('votants'));
     }
 
-    public function userConnect($id)
-    {
-        // connecte l'utilisateur
-        $v = Votant::find($id);
-        session()->put('user_id', $id);
-        session()->put('user_name', $v->prenom);
-        return redirect('/scrutins');
-    }
+
 
     public function createVote(Scrutin $scrutin)
     {

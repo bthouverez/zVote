@@ -19,465 +19,123 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-         \App\Models\User::factory()->create([
-             'name' => 'Bat',
-             'email' => 'bthouverez@bthouverez.fr',
-             'password'=> '$2y$10$uj2W4oYIVfJ83SfP6O3uvOho4FJnyR2/g4YBN1r54LNGNroaTcIAW'
-         ]);
-
-//        $s = new Scrutin();
-//        $s->libelle = 'Election du président';
-//        $s->date = '2022-09-02';
-//        $s->save();
-
-        $v = new Votant();
-        $v->nom = 'ALIMI';
-        $v->prenom = 'Gilbert';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'ARNAUD';
-        $v->prenom = 'Philippe';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BARONNIER';
-        $v->prenom = 'Sylvie';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BATTIN';
-        $v->prenom = 'Roger';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BAYLE';
-        $v->prenom = 'Philippe';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->candidat = true;
-        //$vs->nb_votes = 0;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BAYLE';
-        $v->prenom = 'Stéphane';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BAYLE-DIDIER';
-        $v->prenom = 'Valérie';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BEGUET';
-        $v->prenom = 'Marie-Jeanne';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BOTTICELLI';
-        $v->prenom = 'Antonio';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BOTTICELLI';
-        $v->prenom = 'Lorenzo';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'BESNIER';
-        $v->prenom = 'Jean-Jacques';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CHAFFANJON';
-        $v->prenom = 'Alain';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->candidat = true;
-        //$vs->nb_votes = 0;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CHAFFANJON';
-        $v->prenom = 'Arnaud';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CHAFFANJON';
-        $v->prenom = 'Jérémy';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CHAREYRON';
-        $v->prenom = 'Cécile';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CHORIER';
-        $v->prenom = 'Roger';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CLAUDEL';
-        $v->prenom = 'Mickael';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CLAUDIN';
-        $v->prenom = 'Christian';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CLAUDIN';
-        $v->prenom = 'Romain';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'CREMET';
-        $v->prenom = 'Gilles';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'DAUGAS';
-        $v->prenom = 'Marine';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'DI LITTA';
-        $v->prenom = 'Fabrice';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'DIDIER';
-        $v->prenom = 'Vincent';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'DUBOST';
-        $v->prenom = 'Annick';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'FARGEOT';
-        $v->prenom = 'Marcel';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'FERREOL';
-        $v->prenom = 'Julien';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'FLOS';
-        $v->prenom = 'Jean-Philippe';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->candidat = true;
-        //$vs->nb_votes = 0;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'FLOS';
-        $v->prenom = 'Raphaëlle';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'GROLLEAU';
-        $v->prenom = 'Alexis';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'GUERTAULT';
-        $v->prenom = 'Jean-Marie';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'LOMBARD';
-        $v->prenom = 'Thomas';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->candidat = true;
-        //$vs->nb_votes = 0;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'PAUMIER';
-        $v->prenom = 'Vincent';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'PORETTI';
-        $v->prenom = 'Gérard';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'RADISSON';
-        $v->prenom = 'Magali';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'ROUSSET';
-        $v->prenom = 'Gilles';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'RUIZ';
-        $v->prenom = 'Francisco';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'SADOT';
-        $v->prenom = 'Laurent';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'SAINT-CYR';
-        $v->prenom = 'Sébastien';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'SÉON';
-        $v->prenom = 'Séverine';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'THEVENARD';
-        $v->prenom = 'Christophe';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'THOUVEREZ';
-        $v->prenom = 'Bastien';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->candidat = true;
-        //$vs->nb_votes = 0;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'TISSOT';
-        $v->prenom = 'Maxime';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'VERZI';
-        $v->prenom = 'Anthony';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
-
-        $v = new Votant();
-        $v->nom = 'VIEIRA';
-        $v->prenom = 'Joaquim';
-        $v->save();
-
-        //$vs = new VotantScrutin();
-        //$vs->scrutin_id = 1;
-        //$vs->votant_id = $v->id;
-        //$vs->save();
+        \App\Models\User::factory()->create([
+            'name' => 'Bat',
+            'email' => 'bthouverez@bthouverez.fr',
+            'password' => '$2y$10$uj2W4oYIVfJ83SfP6O3uvOho4FJnyR2/g4YBN1r54LNGNroaTcIAW'
+        ]);
+
+
+        Votant::insert([
+            ['nom' => 'Aimo-boot', 'prenom' => 'Benjamin'],
+            ['nom' => 'ALIMI', 'prenom' => 'Gilbert'],
+            ['nom' => 'ARNAUD', 'prenom' => 'Philippe'],
+            ['nom' => 'AUCOURT', 'prenom' => 'Bastien'],
+            ['nom' => 'AUMONIER', 'prenom' => 'Benjamin'],
+            ['nom' => 'BARONNIER', 'prenom' => 'Sylvie'],
+            ['nom' => 'BATTIN', 'prenom' => 'Roger'],
+            ['nom' => 'BAYLE', 'prenom' => 'Philippe'],
+            ['nom' => 'BAYLE', 'prenom' => 'Stéphane'],
+            ['nom' => 'BAYLE-DIDIER', 'prenom' => 'Valérie'],
+            ['nom' => 'BEGUET', 'prenom' => 'Marie-Jeanne'],
+            ['nom' => 'BELLE', 'prenom' => 'Anaël'],
+            ['nom' => 'BERARD', 'prenom' => 'Morgan'],
+            ['nom' => 'BERTHET', 'prenom' => 'Sylvain'],
+            ['nom' => 'BESNIER', 'prenom' => 'Jean-Jacques'],
+            ['nom' => 'BONNIEL', 'prenom' => 'Julien'],
+            ['nom' => 'BOTTICELLI', 'prenom' => 'Antonio'],
+            ['nom' => 'BOTTICELLI', 'prenom' => 'Lorenzo'],
+            ['nom' => 'BOURICAND', 'prenom' => 'Jérémy'],
+            ['nom' => 'BRAGOUSE', 'prenom' => 'Christophe'],
+            ['nom' => 'BRULAS', 'prenom' => 'Pierrick'],
+            ['nom' => 'CANO', 'prenom' => 'Denis'],
+            ['nom' => 'CAPY', 'prenom' => 'Sylvain'],
+            ['nom' => 'CATALA', 'prenom' => 'Thibault'],
+            ['nom' => 'CHAFFANJON', 'prenom' => 'Alain'],
+            ['nom' => 'CHAFFANJON', 'prenom' => 'Arnaud'],
+            ['nom' => 'CHAFFANJON', 'prenom' => 'Jérémy'],
+            ['nom' => 'CHAFFANJON', 'prenom' => 'Martine'],
+            ['nom' => 'CHAREYRON', 'prenom' => 'Cécile'],
+            ['nom' => 'CHORIER', 'prenom' => 'Roger'],
+            ['nom' => 'CICCIARELLA', 'prenom' => 'Stéphane'],
+            ['nom' => 'CLAUDEL', 'prenom' => 'Mickael'],
+            ['nom' => 'CLAUDIN', 'prenom' => 'Christian'],
+            ['nom' => 'CLAUDIN', 'prenom' => 'Romain'],
+            ['nom' => 'COMBROUX', 'prenom' => 'Stéphane'],
+            ['nom' => 'CORNARA', 'prenom' => 'Kévin'],
+            ['nom' => 'CREMET', 'prenom' => 'Gilles'],
+            ['nom' => 'DART', 'prenom' => 'Benjamin'],
+            ['nom' => 'DAUGAS', 'prenom' => 'Marine'],
+            ['nom' => 'DI LITTA', 'prenom' => 'Fabrice'],
+            ['nom' => 'DI STEFANO', 'prenom' => 'Stéphane'],
+            ['nom' => 'DIDIER', 'prenom' => 'Vincent'],
+            ['nom' => 'DIDIER', 'prenom' => 'Gregory'],
+            ['nom' => 'DUBOIS', 'prenom' => 'Guillaume'],
+            ['nom' => 'DUBOST', 'prenom' => 'Annick'],
+            ['nom' => 'EMONET', 'prenom' => 'Patricia'],
+            ['nom' => 'ESPOSITO', 'prenom' => 'Patricia'],
+            ['nom' => 'FARGEOT', 'prenom' => 'Marcel'],
+            ['nom' => 'FERREOL', 'prenom' => 'Julien'],
+            ['nom' => 'FLOS', 'prenom' => 'Jean-Philippe'],
+            ['nom' => 'FLOS', 'prenom' => 'Raphaëlle'],
+            ['nom' => 'GONZALEZ NAVARRO', 'prenom' => 'Consuelo'],
+            ['nom' => 'GROLLEAU', 'prenom' => 'Alexis'],
+            ['nom' => 'Guerdener', 'prenom' => 'Joey'],
+            ['nom' => 'GUERTAULT', 'prenom' => 'Jean-Marie'],
+            ['nom' => 'GUERY', 'prenom' => 'Audrey'],
+            ['nom' => 'GUERY', 'prenom' => 'Valentin'],
+            ['nom' => 'GUERY', 'prenom' => 'Nathanaël'],
+            ['nom' => 'HERNANDEZ', 'prenom' => 'Audrey'],
+            ['nom' => 'HERNANDEZ', 'prenom' => 'Alexandre'],
+            ['nom' => 'HERNANDEZ', 'prenom' => 'Kylian'],
+            ['nom' => 'IMBERDIS', 'prenom' => 'Frédéric'],
+            ['nom' => 'JOUASSIN', 'prenom' => 'Thomas'],
+            ['nom' => 'KEUSSEYAN', 'prenom' => 'Michel'],
+            ['nom' => 'LABRANCHE', 'prenom' => 'Gilles'],
+            ['nom' => 'LAGOUTTE', 'prenom' => 'Sandrine'],
+            ['nom' => 'LAGOUTTE', 'prenom' => 'Olivier'],
+            ['nom' => 'LIÉVOIS', 'prenom' => 'Dylan'],
+            ['nom' => 'LOMBARD', 'prenom' => 'Thomas'],
+            ['nom' => 'MARQUETOUX', 'prenom' => 'Catherine'],
+            ['nom' => 'MATRISCIANO', 'prenom' => 'Vincent'],
+            ['nom' => 'Michelas', 'prenom' => 'Joe'],
+            ['nom' => 'MORATO', 'prenom' => 'Jean-Christophe'],
+            ['nom' => 'Morel', 'prenom' => 'Jérôme'],
+            ['nom' => 'NICOT', 'prenom' => 'Yoan'],
+            ['nom' => 'PAINVIN', 'prenom' => 'Stéphane'],
+            ['nom' => 'PAUMIER', 'prenom' => 'Vincent'],
+            ['nom' => 'PENIN', 'prenom' => 'Pierre-Marie'],
+            ['nom' => 'PEROCHE-VELLA', 'prenom' => 'Nicole'],
+            ['nom' => 'PORRETTI', 'prenom' => 'Gérard'],
+            ['nom' => 'QUENTIN', 'prenom' => 'Cécile'],
+            ['nom' => 'RADISSON', 'prenom' => 'Magali'],
+            ['nom' => 'ROSELLO', 'prenom' => 'Quentin'],
+            ['nom' => 'ROSELLO', 'prenom' => 'Laura'],
+            ['nom' => 'ROUSSET', 'prenom' => 'Gilles'],
+            ['nom' => 'RUIZ', 'prenom' => 'Francisco'],
+            ['nom' => 'SADOT', 'prenom' => 'Laurent'],
+            ['nom' => 'SAINT-CYR', 'prenom' => 'Sébastien'],
+            ['nom' => 'SAINT-FELIX', 'prenom' => 'Damien'],
+            ['nom' => 'SALLIER', 'prenom' => 'Carla'],
+            ['nom' => 'SALOT', 'prenom' => 'Sébastien'],
+            ['nom' => 'SCOURTELLIS', 'prenom' => 'Denis'],
+            ['nom' => 'SÉON', 'prenom' => 'Séverine'],
+            ['nom' => 'SILVA PETES', 'prenom' => 'Edgar'],
+            ['nom' => 'SUAREZ', 'prenom' => 'Lilian'],
+            ['nom' => 'SUAREZ', 'prenom' => 'Éric'],
+            ['nom' => 'THEVENARD', 'prenom' => 'Christophe'],
+            ['nom' => 'THÉVENOT', 'prenom' => 'Éric'],
+            ['nom' => 'THOUVEREZ', 'prenom' => 'Bastien'],
+            ['nom' => 'THOUVEREZ', 'prenom' => 'Marion'],
+            ['nom' => 'TISSOT', 'prenom' => 'Maxime'],
+            ['nom' => 'TUA', 'prenom' => 'Thierry'],
+            ['nom' => 'VALLENTIN', 'prenom' => 'Sébastien'],
+            ['nom' => 'VERZI', 'prenom' => 'Anthony'],
+            ['nom' => 'Vidal', 'prenom' => 'Christophe'],
+            ['nom' => 'VIEIRA', 'prenom' => 'Joaquim'],
+            ['nom' => 'VILLALBA', 'prenom' => 'Cécile'],
+            ['nom' => 'VOUSTAD', 'prenom' => 'Yanice'],
+            ['nom' => 'WAGNER', 'prenom' => 'Rick'],
+        ]);
     }
 }
